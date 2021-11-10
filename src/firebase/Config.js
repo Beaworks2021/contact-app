@@ -2,12 +2,12 @@
 import firebase from "firebase"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA-68ygLeN2T1FqtRqjxQlfATeAShkoZyk",
-    authDomain: "waxx--apps.firebaseapp.com",
-    projectId: "waxx--apps",
-    storageBucket: "waxx--apps.appspot.com",
-    messagingSenderId: "968878662535",
-    appId: "1:968878662535:web:3740c4a83ea39e9be12922"
+    apiKey: "AIzaSyDzWS9G2g-3C41ho5KspQ5B_kAVFI_dXF8",
+    authDomain: "users-app-2.firebaseapp.com",
+    projectId: "users-app-2",
+    storageBucket: "users-app-2.appspot.com",
+    messagingSenderId: "608743784820",
+    appId: "1:608743784820:web:fc37d0c459d4f1f79d2c21"
   };
 
   // Initialize Firebase

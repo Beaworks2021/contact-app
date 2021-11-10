@@ -54,7 +54,7 @@ class UserInput extends Component {
               name="email"
               value={this.state.email}
               onChange={(e) => this.setState({ email: e.target.value })}
-              placeholder="Enter your Email"
+              placeholder="Phone Number"
             />
           </div>
 
@@ -64,7 +64,7 @@ class UserInput extends Component {
               name="gen"
               value={this.state.gen}
               onChange={(e) => this.setState({ gen: e.target.value })}
-              placeholder="Enter your Gen"
+              placeholder="Enter Location"
             />
           </div>
 
