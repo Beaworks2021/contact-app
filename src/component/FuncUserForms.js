@@ -46,7 +46,7 @@ function FuncUserForm (props) {
             />
           </div>
 
-          <div>
+          <div>npn
           <input
               type="text"
               name="gen"

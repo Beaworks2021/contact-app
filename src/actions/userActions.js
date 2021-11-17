@@ -18,17 +18,33 @@ export const addUser = (user) => {
 };
 
 export const deleteUser = (userId) => {
-	return {
-		type: "DELETE_USER",
-		payload: userId,
-	};
-};
+	 return  (dispatch, state, {getFirestore})=>{
+		 getFirestore()
+		 .collection('users')
+		 .doc(userId)
+		 .delete()
+		 .then(() =>{})
+	 }  
+	// {
+	// 	type: "DELETE_USER",
+	// 	payload: userId,
+	// };
+};  
 
 export const editUser = (userId, updatedUser) => {
-	return {
-		type: "EDIT_USER",
-		payload: { userId, updatedUser },
-	};
+	return (dispatch, state, { getFirestore }) => {
+		getFirestore()
+			.collection("users")
+			.doc(userId)
+			.update(updatedUser)
+			.then(() => {})
+			.catch((err) => {});
+
+// export const editUser = (userId, updatedUser) => {
+// 	return {
+// 		type: "EDIT_USER",
+// 		payload: { userId, updatedUser },
+};
 };
 
 export const getAllUsers = () => {
@@ -36,12 +52,12 @@ export const getAllUsers = () => {
 		getFirestore()
 			.collection("users")
 			.onSnapshot(
-				(snapshot) => {
+				(snapshot) => { 
 					let users = [];
 					snapshot.forEach((doc) => {
-						users.push(doc.data());
+						users.push({...doc.data(), id: doc.id});
 					});
-					console.log(users);
+					console.log(users); 
 					dispatch({ type: "SET_ALL_USERS", payload: users });
 				},
 				(error) => {}
