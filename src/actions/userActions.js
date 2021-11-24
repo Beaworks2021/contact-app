@@ -1,17 +1,23 @@
 //export const ADD_USER = "ADD_USER";
-
 export const addUser = (user) => {
 	return (dispatch, state, { getFirestore }) => {
 		getFirestore()
 			.collection("users")
-			.add(user)
-			.then(() => {
-				dispatch({
-					type: "ADD_USER",
-					payload: user,
-				});
-			});
-	};
+			.add({ ...user, timestamp: getFirestore().FieldValue.serverTimestamp() })
+			.then(() => {});
+		};
+// export const addUser = (user) => {
+// 	return (dispatch, state, { getFirestore }) => {
+// 		getFirestore()
+// 			.collection("users")
+// 			.add(user)
+// 			.then(() => {
+// 				dispatch({
+// 					type: "ADD_USER",
+// 					payload: user,
+// 				});
+// 			});
+// 	};
 
 	// console.log("addUser", user);
 	// //user.id = Math.random().toString();
